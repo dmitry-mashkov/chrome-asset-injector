@@ -1,16 +1,14 @@
 {
   "name": "Asset injector Google Chrome extension",
-  "version": "1.0",
+  "version": "1.1",
   "description": "Injects JS and CSS links for specific domains",
-  "content_scripts": [
-    {
-      "matches": [
-        "http://*/*",
-        "https://*/*"
-      ],
-      "js": ["injector.servis.js"]
-    }
-  ],
+  "content_scripts": [{
+    "matches": [
+      "http://*/*",
+      "https://*/*"
+    ],
+    "js": ["injector.servis.js"]
+  }],
   "browser_action": {
     "default_icon": "images/icon-disabled.png",
     "default_title": "Asset injector",
