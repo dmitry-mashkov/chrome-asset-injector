@@ -1,7 +1,7 @@
 {
   "name": "Asset injector Google Chrome extension",
   "version": "1.0",
-  "description": "Injects a link to existing CSS file running on localhost",
+  "description": "Injects JS and CSS links for specific domains",
   "content_scripts": [
     {
       "matches": [
