@@ -1,2 +1,2 @@
-# chrome-css-injector
-Google Chrome extension for injecting CSS files
+# chrome-asset-injector
+Google Chrome extension for injecting CSS and JS files

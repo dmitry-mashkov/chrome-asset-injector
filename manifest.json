@@ -1,5 +1,5 @@
 {
-  "name": "CSS injector Google Chrome extension",
+  "name": "Asset injector Google Chrome extension",
   "version": "1.0",
   "description": "Injects a link to existing CSS file running on localhost",
   "content_scripts": [
@@ -16,7 +16,7 @@
       "19": "images/icon-19.png",
       "38": "images/icon-38.png"
     },
-    "default_title": "CSS injector",
+    "default_title": "Asset injector",
     "default_popup": "popup/popup.html"
   },
   "permissions": [
