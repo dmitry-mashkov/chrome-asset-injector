@@ -1,57 +1,87 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <meta charset="utf-8"/>
-  <title>Popup</title>
+  <meta charset="utf-8" />
+  <title>Assets injector</title>
 
   <style>
     body {
       width: 400px;
     }
+
+    h1 {
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .field {
+      width: 100%;
+      margin-bottom: 15px;
+    }
+
+    .field>div:first-of-type {
+      width: 70px;
+      text-align: right;
+      float: left;
+      padding: 5px 15px 5px;
+      font-weight: bold;
+    }
+
+    input,
+    button {
+      padding: 7.5px;
+      border-radius: 2px;
+      border: 1px solid #ccc;
+    }
+
+    #submit {
+      padding-left: 30px;
+      padding-right: 30px;
+      margin-left: 100px;
+      margin-bottom: 5px;
+      background-color: green;
+      color: white;
+      border: 0;
+    }
+
+    #getCurrent {
+      background-color: orange;
+      color: white;
+      border: 0;
+    }
   </style>
 
 </head>
-<body>
-<h1>Specify URL of a CSS file you want to inject:</h1>
 
-<div>
-  <label for="hostUrl">
-    Domain
-  </label>
-  <input
-    type="text"
-    name="hostUrl"
-    id="hostUrl">
-</div>
-<br>
+<body id="assets-injector">
+  <h1>Configure asset injector</h1>
 
-<div>
-  <label for="cssUrl">
-    CSS
-  </label>
-  <input
-    type="text"
-    name="cssUrl"
-    id="cssUrl">
-</div>
-<br>
+  <div class="field">
+    <div>
+      <label for="hostUrl">Domain</label>
+    </div>
+    <input type="text" name="hostUrl" id="hostUrl">
+    <button id="getCurrent">Current</button>
+  </div>
 
-<div>
-  <label for="jsUrl">
-    JS
-  </label>
-  <input
-    type="text"
-    name="jsUrl"
-    id="jsUrl">
-</div>
-<br>
+  <div class="field">
+    <div>
+      <label for="cssUrl">CSS</label>
+    </div>
+    <input type="text" name="cssUrl" id="cssUrl">
+  </div>
 
-<button type="submit"
-        id="submit">
-  Save
-</button>
+  <div class="field">
+    <div>
+      <label for="jsUrl">JS</label>
+    </div>
+    <input type="text" name="jsUrl" id="jsUrl">
+  </div>
 
-<script src="popup.js"></script>
+  <button type="submit" id="submit">Inject</button>
+
+  <script src="popup.js"></script>
 </body>
+
 </html>
