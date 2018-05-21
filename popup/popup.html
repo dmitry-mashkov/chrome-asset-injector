@@ -37,6 +37,15 @@
 
     input[type='checkbox'] {
       margin-top: 7.5px;
+      cursor: pointer;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    button:hover {
+      box-shadow: 2px 3px 3px 0px rgba(148, 148, 148, 0.35);
     }
 
     #submit {
@@ -49,10 +58,18 @@
       border: 0;
     }
 
+    #submit:hover {
+      background-color: darkgreen;
+    }
+
     #setCurrent {
       background-color: orange;
       color: white;
       border: 0;
+    }
+
+    #setCurrent:hover {
+      background-color: darkorange;
     }
   </style>
 
@@ -87,15 +104,10 @@
     <div>
       <label for="isEnabled">Enabled</label>
     </div>
-    <input
-      type="checkbox"
-      name="isEnabled"
-      id="isEnabled">
+    <input type="checkbox" name="isEnabled" id="isEnabled">
   </div>
 
-  <button
-    type="submit"
-    id="submit">
+  <button type="submit" id="submit">
     Save
   </button>
 
