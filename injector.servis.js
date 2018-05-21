@@ -22,8 +22,8 @@ function onInit() {
   loadAssets();
 }
 
-function injectAssets({cssUrl, jsUrl, hostUrl} = {}) {
-  if (!cssUrl && !jsUrl) return;
+function injectAssets({cssUrl, jsUrl, hostUrl, isEnabled} = {}) {
+  if (!isEnabled || (!cssUrl && !jsUrl)) return;
 
   // Filter hostname by stored URL
   if (hostUrl && (location.host !== hostUrl && location.hostname !== hostUrl && location.origin !== hostUrl)) return;
@@ -40,7 +40,7 @@ function injectAssets({cssUrl, jsUrl, hostUrl} = {}) {
 }
 
 function loadAssets() {
-  chrome.storage.sync.get(['cssUrl', 'jsUrl', 'hostUrl'], injectAssets);
+  chrome.storage.sync.get(['cssUrl', 'jsUrl', 'hostUrl', 'isEnabled'], injectAssets);
 }
 
 function insertCssScript(cssUrl) {

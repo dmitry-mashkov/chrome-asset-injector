@@ -6,35 +6,35 @@ const submitBtn = document.getElementById('submit'),
   cssUrlElement = document.getElementById('cssUrl'),
   jsUrlElement = document.getElementById('jsUrl'),
   hostUrlElement = document.getElementById('hostUrl'),
-  getCurrentHostname = document.getElementById('getCurrent');
+  setCurrentBtn = document.getElementById('setCurrent'),
+  isEnabledElement = document.getElementById('isEnabled');
 
 init();
 
+
 function init() {
-  chrome.storage.sync.get(['cssUrl', 'jsUrl', 'hostUrl'], fillData);
+  chrome.storage.sync.get(['cssUrl', 'jsUrl', 'hostUrl', 'isEnabled'], fillData);
   submitBtn.addEventListener('click', onSubmit, false);
-  getCurrentHostname.addEventListener('click', onGetCurrent, false);
+  setCurrentBtn.addEventListener('click', onSetCurrentClick, false);
 }
 
-function fillData({
-  cssUrl,
-  jsUrl,
-  hostUrl
-} = {}) {
+function fillData({ cssUrl, jsUrl, hostUrl, isEnabled } = {}) {
   cssUrlElement.value = cssUrl || '';
   jsUrlElement.value = jsUrl || '';
   hostUrlElement.value = hostUrl || '';
+  isEnabledElement.checked = !!isEnabled;
 }
 
 function onSubmit() {
   chrome.storage.sync.set({
     cssUrl: cssUrlElement.value,
     jsUrl: jsUrlElement.value,
-    hostUrl: hostUrlElement.value
+    hostUrl: hostUrlElement.value,
+    isEnabled: isEnabledElement.checked
   });
 }
 
-function onGetCurrent() {
+function onSetCurrentClick() {
   chrome.tabs.getSelected(null, function(tab) {
     var url = new URL(tab.url);
     var domain = url.hostname;

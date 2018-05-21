@@ -35,6 +35,10 @@
       border: 1px solid #ccc;
     }
 
+    input[type='checkbox'] {
+      margin-top: 7.5px;
+    }
+
     #submit {
       padding-left: 30px;
       padding-right: 30px;
@@ -45,7 +49,7 @@
       border: 0;
     }
 
-    #getCurrent {
+    #setCurrent {
       background-color: orange;
       color: white;
       border: 0;
@@ -62,7 +66,7 @@
       <label for="hostUrl">Domain</label>
     </div>
     <input type="text" name="hostUrl" id="hostUrl">
-    <button id="getCurrent">Current</button>
+    <button id="setCurrent">Current</button>
   </div>
 
   <div class="field">
@@ -79,7 +83,21 @@
     <input type="text" name="jsUrl" id="jsUrl">
   </div>
 
-  <button type="submit" id="submit">Inject</button>
+  <div class="field">
+    <div>
+      <label for="isEnabled">Enabled</label>
+    </div>
+    <input
+      type="checkbox"
+      name="isEnabled"
+      id="isEnabled">
+  </div>
+
+  <button
+    type="submit"
+    id="submit">
+    Save
+  </button>
 
   <script src="popup.js"></script>
 </body>
