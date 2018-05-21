@@ -32,12 +32,18 @@ function onSubmit() {
     hostUrl: hostUrlElement.value,
     isEnabled: isEnabledElement.checked
   });
+
+  if (isEnabledElement.checked) {
+    chrome.browserAction.setIcon({path: '../images/icon-enabled.png'});
+
+  } else {
+    chrome.browserAction.setIcon({path: '../images/icon-disabled.png'});
+  }
 }
 
 function onSetCurrentClick() {
-  chrome.tabs.getSelected(null, function(tab) {
-    var url = new URL(tab.url);
-    var domain = url.hostname;
+  chrome.tabs.getSelected(null, tab => {
+    const domain = (new URL(tab.url)).hostname;
     hostUrlElement.value = domain;
   });
 }

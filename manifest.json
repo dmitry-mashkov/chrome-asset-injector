@@ -12,10 +12,7 @@
     }
   ],
   "browser_action": {
-    "default_icon": {
-      "19": "images/icon-19.png",
-      "38": "images/icon-38.png"
-    },
+    "default_icon": "images/icon-disabled.png",
     "default_title": "Asset injector",
     "default_popup": "popup/popup.html"
   },
